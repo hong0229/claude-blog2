@@ -1,4 +1,4 @@
-<title>랜드랭귀지 블로그 스튜디오</title>
+<title>센트럴자이 미사금호 공인중개사사무소</title>
 <style>
 /* Layout: 고정 사이드바 + (진행 표시 / 입력 40% · 결과 60%) + 하단 고정 작업 바 */
 :root{
@@ -249,7 +249,7 @@ details.fold[open]>summary{margin-bottom:14px}
 
 <div class="app">
   <aside class="side" aria-label="메뉴">
-    <div class="logo"><div class="logo-mark">LL</div><div><b>랜드랭귀지<br>블로그 스튜디오</b><small>부동산 정보성 글쓰기</small></div></div>
+    <div class="logo"><div class="logo-mark">CM</div><div><b>센트럴자이 미사금호<br>공인중개사사무소</b><small>부동산 정보성 글쓰기</small></div></div>
     <nav class="nav-group" aria-label="AI 글쓰기">
       <div class="nav-label">AI 글쓰기</div>
       <button class="nav-item active" id="navWrite" type="button">정보성(부동산)</button>
@@ -283,7 +283,7 @@ details.fold[open]>summary{margin-bottom:14px}
             <form id="form" autocomplete="off" onsubmit="return false">
               <div class="field">
                 <label class="lab" for="fAuthor">작성자 <span class="cnt" data-cnt="fAuthor" data-max="20"></span></label>
-                <input class="inp" id="fAuthor" maxlength="20" value="랜드랭귀지 김유수 공인중개사">
+                <input class="inp" id="fAuthor" maxlength="20" value="센트럴자이 미사금호공인중개사사무소">
               </div>
               <div class="field">
                 <label class="lab" for="fTopic"><span>주제<span class="req">*</span></span><span class="cnt" data-cnt="fTopic" data-max="30"></span></label>
@@ -482,7 +482,7 @@ function copyRich(html,plain,okMsg){
 /* ---------------- 폼 ---------------- */
 const fAuthor=$('#fAuthor'),fTopic=$('#fTopic'),fTitle=$('#fTitle'),fMemo=$('#fMemo'),fDate=$('#fDate'),fSearch=$('#fSearch'),fCrit=$('#fCrit');
 fDate.value=todayISO();fCrit.value=DEFAULT_CRIT;
-(function loadDraft(){const raw=lsGet('llbs.draft');if(!raw)return;try{const d=JSON.parse(raw);Object.assign(F,d);fAuthor.value=F.author||'랜드랭귀지 김유수 공인중개사';fTopic.value=F.topic||'';fTitle.value=F.title||'';fMemo.value=F.memo||'';fSearch.checked=F.search!==false;fCrit.value=F.crit||DEFAULT_CRIT;const r=document.querySelector(`input[name=tone][value="${F.tone}"]`);if(r)r.checked=true;if(!Array.isArray(F.refs)||!F.refs.length)F.refs=[''];F.date=todayISO();}catch(e){}})();
+(function loadDraft(){const raw=lsGet('llbs.draft');if(!raw)return;try{const d=JSON.parse(raw);Object.assign(F,d);fAuthor.value=F.author||'센트럴자이 미사금호공인중개사사무소';fTopic.value=F.topic||'';fTitle.value=F.title||'';fMemo.value=F.memo||'';fSearch.checked=F.search!==false;fCrit.value=F.crit||DEFAULT_CRIT;const r=document.querySelector(`input[name=tone][value="${F.tone}"]`);if(r)r.checked=true;if(!Array.isArray(F.refs)||!F.refs.length)F.refs=[''];F.date=todayISO();}catch(e){}})();
 function readForm(){F.author=fAuthor.value.trim();F.topic=fTopic.value.trim();F.title=fTitle.value.trim();F.memo=fMemo.value.trim();F.date=fDate.value||todayISO();F.search=fSearch.checked;F.crit=fCrit.value.trim()||DEFAULT_CRIT;F.tone=(document.querySelector('input[name=tone]:checked')||{}).value||'습니다';}
 let draftT;function saveDraft(){clearTimeout(draftT);draftT=setTimeout(()=>{const d=Object.assign({},F);delete d.date;lsSet('llbs.draft',JSON.stringify(d));},400);}
 function updCounters(){document.querySelectorAll('[data-cnt]').forEach(el=>{const i=document.getElementById(el.dataset.cnt);const n=[...i.value].length,mx=+el.dataset.max;el.textContent=`${n.toLocaleString()}/${mx.toLocaleString()}`;el.classList.toggle('over',n>mx);});}
